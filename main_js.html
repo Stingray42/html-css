@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Employee List</title>
+		<base href=""/>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<form name="mainform" action="" method="POST" align="center">
+			<fieldset>
+			<legend>Список сотрудников</legend>
+				<table id="emp" border="1px" cellspacing="0px" cellpadding="4px" align="center">
+					<tr>
+						<th><input type="checkbox" disabled></th>
+						<th>Номер сотрудника</th>
+						<th>Имя сотрудника</th>
+						<th>Должность сотрудника</th>
+						<th>Дата принятия на работу</th>
+						<th>Департамент</th>
+						<th>	</th>
+					</tr>
+					<tr>
+						<td><input type="checkbox"></td>
+						<td><a href="">7369</a></td>
+						<td>Смит</td>
+						<td>Клерк</td>
+						<td>17-12-1980</td>
+						<td>20</td>
+						<td><a href="#" onclick="deleteRow(this); return false;">Удалить</a></td>
+					</tr>
+						<tr>
+						<td><input type="checkbox"></td>
+						<td><a href="">7499</a></td>
+						<td>Аллен</td>
+						<td>Продавец</td>
+						<td>20-02-1981</td>
+						<td>30</td>
+						<td><a href="#" onclick="deleteRow(this); return false;">Удалить</a></td>
+					</tr>
+						<tr>
+						<td><input type="checkbox"></td>
+						<td><a href="">7521</a></td>
+						<td>Вард</td>
+						<td>Продавец</td>
+						<td>22-02-1981</td>
+						<td>30</td>
+						<td><a href="#" onclick="deleteRow(this); return false;">Удалить</a></td>
+					</tr>
+						<tr>
+						<td><input type="checkbox"></td>
+						<td><a href="">7566</a></td>
+						<td>Джонс</td>
+						<td>Менеджер</td>
+						<td>02-04-1981</td>
+						<td>20</td>
+						<td><a href="#" onclick="deleteRow(this); return false;">Удалить</a></td>
+					</tr>
+						<tr align="center">
+						<td><input type="checkbox"></td>
+						<td><a href="">7654</a></td>
+						<td>Мартин</td>
+						<td>Продавец</td>
+						<td>28-09-1981</td>
+						<td>30</td>
+						<td><a href="#" onclick="deleteRow(this); return false;">Удалить</a></td>
+					</tr>
+						<tr>
+						<td><input type="checkbox"></td>
+						<td><a href="">7698</a></td>
+						<td>Блейк</td>
+						<td>Менеджер</td>
+						<td>01-05-1981</td>
+						<td>30</td>
+						<td><a href="#" onclick="deleteRow(this); return false;">Удалить</a></td>
+					</tr>
+						<tr>
+						<td><input type="checkbox"></td>
+						<td><a href="">7782</a></td>
+						<td>Кларк</td>
+						<td>Менеджер</td>
+						<td>09-06-1981</td>
+						<td>10</td>
+						<td><a href="#" onclick="deleteRow(this); return false;">Удалить</a></td>
+					</tr>
+						<tr>
+						<td><input type="checkbox"></td>
+						<td><a href="">7788</a></td>
+						<td>Скотт</td>
+						<td>Аналитик</td>
+						<td>09-12-1982</td>
+						<td>20</td>
+						<td><a href="#" onclick="deleteRow(this); return false;">Удалить</a></td>
+					</tr>
+						<tr>
+						<td><input type="checkbox"></td>
+						<td><a href="">7839</a></td>
+						<td>Кинг</td>
+						<td>Президент</td>
+						<td>17-11-1981</td>
+						<td>10</td>
+						<td><a href="#" onclick="deleteRow(this); return false;">Удалить</a></td>
+					</tr>
+						<tr>
+						<td><input type="checkbox"></td>
+						<td><a href="">7844</a></td>
+						<td>Тернер</td>
+						<td>Продавец</td>
+						<td>08-09-1981</td>
+						<td>30</td>
+						<td><a href="#" onclick="deleteRow(this); return false;">Удалить</a></td>
+					</tr>
+				</table>
+			</fieldset>
+			
+			<script type="text/javascript">
+				function deleteRow(r) {
+					confirm('Вы уверены?','Удалить');
+					var i = r.parentNode.parentNode.rowIndex;
+					document.getElementById('emp').deleteRow(i);
+				}
+			</script>
+			<fieldset>
+			<legend>Работа с таблицей</legend>
+			<p>
+				<input type="text" id="eno" placeholder="Введите номер сотрудника" form="Search" />
+				<input type="submit" id="eno-submit">
+				
+				<script type="text/javascript">
+					function numberCheck() {
+					var enumber = document.getElementById('eno').value;
+						if (isNaN(enumber)) alert( "Введите корректный номер" );
+						document.getElementById('eno').value = '';
+					};
+					
+					document.getElementById('eno-submit').onclick = numberCheck;
+					document.getElementById('eno').onkeyup = function(e) {
+						if (e.keyCode === 13) {
+							numberCheck();
+						}};
+				</script>
+			</p>
+			<p>
+				<input type="text" id="ename" placeholder="Введите имя сотрудника"/>
+				<input type="submit" id="ename-submit">
+				
+				<script type="text/javascript">
+					document.body.onclick = function(e){
+						if (e.target != document.getElementById('ename')) {
+							document.getElementById('ename').value = '';
+						} else {
+							  document.getElementById('ename').value = 'Например, Иванов';
+						}};
+					
+					document.getElementById('ename').addEventListener('keypress', function() {  
+						document.getElementById('ename').value = '';
+						this.removeEventListener('keypress', arguments.callee); 
+					});
+					
+					document.getElementById('ename-submit').onclick = function() {
+						var name = document.getElementById('ename').value;
+						var confirm = window.open('confirm_js.html?name='+name);
+					}
+				</script>
+			</p>
+			<p>
+				<button>Информация обо всех сотрудниках</button>
+			</p>
+			<p>
+				<a href="">Создать сотрудника</a>
+			</p>
+			</fieldset>
+		</form>
+	</body>
+</html>

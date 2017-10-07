@@ -1,0 +1,92 @@
+
+html, body{
+	background-color: #e4dfd4;
+	background-image: url(wov.png);
+	color: #36393B;
+	font-family: Verdana, Helvetica, Sans-serif;
+	font-size: 0.9em
+}
+
+body {
+	margin: 0;
+	padding: 10px;
+	margin-bottom: auto;
+	font-size: 100%;
+}
+
+table {
+	background: #EFE5AE;
+    border: 2px solid #36393B;
+    width: auto;
+}
+
+th, td {
+	border: none;
+    padding: 5px;
+	text-align: center;
+}
+
+th {
+	color: #F4EBC2;
+	font-weight: normal;
+	background-color: #48444E;
+	border-bottom: 2px solid #36393B;
+}
+
+tr:nth-child(odd) { background-color: #C7B892; }
+
+tr:hover{
+	background-color: #958881;
+	transition: 0.15s ease-in-out;
+}
+
+fieldset {
+	border: 2px solid #36393B;
+	margin: 0;
+	margin-bottom: 20px;
+	padding: 8px;
+	width: auto;
+}
+
+a {
+	margin: 0;
+	color: #F0544F;
+	font-size: 100%;
+	vertical-align: baseline;
+	cursor: pointer;
+	text-decoration: underline;
+	padding: 5px;
+}
+
+a:hover { 
+	color:#D81E5B; 
+	transition: 0.15s ease-in-out;
+}
+
+input, button {
+	margin: 0;
+	padding: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: 2px solid #36393B;
+}
+button {
+	padding-left: 23px;
+	padding-right: 23px;
+}
+
+legend {
+	margin: 0;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+p {
+	margin: 0;
+	padding: 5px;
+}
+
+form {
+	margin: 0;
+	padding: 5px;
+}

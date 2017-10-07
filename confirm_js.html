@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Confirmation</title>
+		<base href=""/>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<form name="confirm" action="" method="POST" align="center">
+			<fieldset>
+			<legend>Поиск</legend>
+			<p>
+				<input type="text" id="ename" placeholder="Введите фамилию сотрудника" form="Search"/>
+				<input type="submit" id="ename-submit" value="Сохранить">
+				
+				<script type="text/javascript">
+					name = decodeURIComponent(window.location.href.split("?")[1].split("=")[1]);
+					document.getElementById('ename').value = name;
+				</script>
+			</p>
+			</fieldset>
+		</form>
+	</body>
+</html>
